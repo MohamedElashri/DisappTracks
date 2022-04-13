@@ -1,0 +1,45 @@
+! susy.cmnd
+! This file contains commands to be read in for a Pythia8 run.
+! Lines not beginning with a letter or digit are comments.
+
+! 1) Settings used in the main program.
+Main:numberOfEvents = 10000        ! number of events to generate
+Main:timesAllowErrors = 3          ! how many aborts before run stops
+
+! 2) Settings related to output in init(), next() and stat().
+Init:showChangedSettings = off      ! list changed settings
+Init:showChangedParticleData = off ! list changed particle data
+Next:numberCount = 10000             ! print message every n events
+Next:numberShowInfo = 10            ! print event information n times
+Next:numberShowProcess = 5         ! print process record n times
+Next:numberShowEvent = 5           ! print event record n times
+
+
+! 3) Beam parameter settings. Values below agree with default ones.
+Beams:idA = 2212                   ! first beam, p = 2212, pbar = -2212
+Beams:idB = 2212                   ! second beam, p = 2212, pbar = -2212
+Beams:eCM = 13000.                 ! CM energy of collision
+
+! 4) Read SLHA spectrum (a few examples are provided by default)
+SLHA:verbose = 3                    ! Print all SLHA information
+SLHA:file = AMSB_Chargino500GeV_softsusy.slha
+
+! 5) Process selection
+SUSY:all = off                      ! Switches on ALL (~400) SUSY processes
+SUSY:qqbar2chi+-chi0 = on
+SUSY:qqbar2chi+chi-  = on
+1000024:mayDecay = true
+1000022:mayDecay = true
+1000024:tau0 = 1000  ! in units of mm
+1000024:tauCalc = false
+!ParticleDecays:tau0Max = 1000
+
+! 6) Settings for the event generation process in the Pythia8 library.
+PartonLevel:MPI = off              ! no multiparton interactions
+PartonLevel:ISR = off              ! no initial-state radiation
+PartonLevel:FSR = off              ! no final-state radiation
+HadronLevel:Hadronize = off        ! no hadronization
+
+
+! 7) vertices
+Next:showScaleAndVertex = on
