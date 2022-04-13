@@ -20,7 +20,7 @@ Beams:idA = 2212                   ! first beam, p = 2212, pbar = -2212
 Beams:idB = 2212                   ! second beam, p = 2212, pbar = -2212
 Beams:eCM = 13000.                 ! CM energy of collision
 
-! 4) Read SLHA spectrum (a few examples are provided by default)
+! 4) Read SLHA spectrum 
 SLHA:verbose = 3                    ! Print all SLHA information
 SLHA:file = AMSB_Chargino500GeV_isajet88.slha
 
@@ -30,7 +30,8 @@ SUSY:qqbar2chi+-chi0 = on
 SUSY:qqbar2chi+chi-  = on
 1000024:mayDecay = true
 1000022:mayDecay = true
-1000024:tau0 = 1000  ! in units of mm
+1000024:tau0 = 100000  ! in units of mm
+1000024:oneChannel = 1 1.0 100 1000022 211
 1000024:tauCalc = false
 !ParticleDecays:tau0Max = 1000
 
