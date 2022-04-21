@@ -22,7 +22,7 @@ Beams:eCM = 13000.                 ! CM energy of collision
 
 ! 4) Read SLHA spectrum 
 SLHA:verbose = 3                    ! Print all SLHA information
-SLHA:file = AMSB_Chargino1000GeV_isajet88.slha
+SLHA:file = SLHA/AMSB_Chargino700GeV_isajet88.slha
 SLHA:allowUserOverride =true
 
 ! 5) Process selection
@@ -32,7 +32,7 @@ SUSY:qqbar2chi+chi-  = on
 1000024:tauCalc = false ! turn off automatic lifetime calculation
 1000024:mayDecay = true
 1000022:mayDecay = false
-1000024:tau0 = 5000      ! specify the lifetime to use (in units of mm)
+1000024:tau0 = 10000      ! specify the lifetime to use (in units of mm)
 !1000024:oneChannel = 1 1.0 100 1000022 211
 
 ! 6) Settings for the event generation process in the Pythia8 library.

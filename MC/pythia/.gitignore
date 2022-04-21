@@ -1,6 +1,5 @@
 .idea
 .vscode
-*.pdf
 *.C
 *.dat
 *.py
