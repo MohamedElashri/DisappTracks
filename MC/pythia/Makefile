@@ -39,12 +39,17 @@ $(PYTHIA):
 
 
 AMSB: $(PYTHIA) AMSB.cc
-	$(CXX) $@.cc -o $@ $(CXX_COMMON)
+ifeq ($(ROOT_USE),true)
+	$(CXX) $@.cc -o $@ -w $(CXX_COMMON) $(ROOT_LIB)\
+	 `$(ROOT_CONFIG) --cflags --glibs`
+else
+	$(error Error: $@ requires ROOT)
+endif
 
 # Clean.
 clean:
 	@rm -f AMSB; rm -f AMSB;\
 	rm -f *.dat; rm -f hist.root;\
 	rm -f *~; rm -f \#*; rm -f core*; rm -f *Dct.*; rm -f *.so;\
-	rm -f *.log; rm -f *Plot.py; rm -f *.pcm; rm -f *.mpi;\
+	rm -f *.log; rm -f *.py; rm -f *.pcm; rm -f *.mpi;\
 	rm -f *.hepmc; rm -f *.yoda; rm -f *.root; \

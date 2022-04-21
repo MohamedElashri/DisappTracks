@@ -1,0 +1,13 @@
+.idea
+.vscode
+*.pdf
+*.C
+*.dat
+*.py
+*.txt 
+.DS_Store
+*.vscode
+*/*.pdf
+*.o
+*
+!.gitignore

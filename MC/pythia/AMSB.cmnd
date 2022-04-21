@@ -10,9 +10,9 @@ Main:timesAllowErrors = 3          ! how many aborts before run stops
 Init:showChangedSettings = off      ! list changed settings
 Init:showChangedParticleData = off ! list changed particle data
 Next:numberCount = 10000             ! print message every n events
-Next:numberShowInfo = 10            ! print event information n times
-Next:numberShowProcess = 5         ! print process record n times
-Next:numberShowEvent = 5           ! print event record n times
+Next:numberShowInfo = 1            ! print event information n times
+Next:numberShowProcess = 1         ! print process record n times
+Next:numberShowEvent = 1           ! print event record n times
 
 
 ! 3) Beam parameter settings. Values below agree with default ones.
@@ -22,17 +22,19 @@ Beams:eCM = 13000.                 ! CM energy of collision
 
 ! 4) Read SLHA spectrum 
 SLHA:verbose = 3                    ! Print all SLHA information
-SLHA:file = AMSB_Chargino1000GeV_isajet88.slha
+SLHA:file = AMSB_Chargino1000GeV_isajet88.spc
+SLHA:allowUserOverride =true
+
 
 ! 5) Process selection
 SUSY:all = off                      ! Switches on ALL (~400) SUSY processes
 SUSY:qqbar2chi+-chi0 = on
 SUSY:qqbar2chi+chi-  = on
+1000024:tauCalc = false ! turn off automatic lifetime calculation
 1000024:mayDecay = true
 1000022:mayDecay = false
-1000024:tau0 = 1000  ! in units of mm
-1000024:oneChannel = 1 1.0 100 1000022 211
-1000024:tauCalc = true
+1000024:tau0 = 5000      ! specify the lifetime to use (in units of mm)
+!1000024:oneChannel = 1 1.0 100 1000022 211
 
 ! 6) Settings for the event generation process in the Pythia8 library.
 PartonLevel:MPI = off              ! no multiparton interactions
