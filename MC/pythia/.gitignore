@@ -7,7 +7,6 @@
 *.txt 
 .DS_Store
 *.vscode
-*/*.pdf
 *.o
-*
+*AMSB
 !.gitignore
