@@ -3,6 +3,7 @@
 *.C
 *.dat
 *.py
+!scripts/*.py
 *.txt 
 .DS_Store
 *.vscode
