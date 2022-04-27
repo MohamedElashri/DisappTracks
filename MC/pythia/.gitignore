@@ -12,3 +12,4 @@
 !.gitignore
 SLHA/CMS/*
 *.pdf
+!scripts/*pdf
