@@ -3,7 +3,7 @@
 '''
 This Script is used to fit a histogram with an exponential function.
 ß
-Usage: python3 exp_fit.py -bin <bin_number> -in <root_file> -n_hist <histogram_name> -out <output_file_name> -loc <destination_location>
+Usage: python3 exp_fit.py -bin_number <bin_number> -input_file <root_file> -hist_name <histogram_name> -output_file <output_file_name> --low <low_range>
 
 Author: Mohamed Elashri
 Date:   2022-05-01
