@@ -13,27 +13,6 @@
 using namespace Pythia8;
 
 
-// My UserHooks class
-
-/*
-class MyUserHooks : public UserHooks {
-
-    public:
-
-    bool canVetoETA() override {return true;}
-
-    bool doVetoETA(const Event& e) override {
-      // Only LHCb acceptance
-      for (const Particle& p : e) {
-        if (p.eta() > 2 && p.eta() < 5) return 0.;
-          return false;
-      }
-      infoPtr->errorMsg("Info: Event vetoed by MyUserHooks");
-      return true;
-    }
-    // only our decay window is allowed
-};
-*/
 
 
 int main() {
@@ -58,8 +37,8 @@ int main() {
     // Create file on which histogram(s) can be saved.
     TFile* outFile = new TFile("hist.root", "RECREATE");
     // Book histogram
-    //TH1F *decVtx = new TH1F("decVtx","Chargino decay vertex ", 100, -0, 10000);
-    TH1F *decVtx = new TH1F("decVtx","Chargino decay vertex ", 100, 900, 1000); // for the decay vertex in custom decay window
+    TH1F *decVtx = new TH1F("decVtx","Chargino decay vertex ", 100, 0, 10000);
+    //TH1F *decVtx = new TH1F("decVtx","Chargino decay vertex ", 100, 900, 1000); // for the decay vertex in custom decay window
     // make exponential fit function
     int CHI = 1000024;
     cout << "Lifetime [mm] =" << scientific << pythia.particleData.tau0(CHI) << endl;
@@ -95,21 +74,21 @@ int main() {
                 //cout << "\n Chargino decay vertex (mm from origin)\n"<< dist << endl;
                 }
                 */
-        if (event[i].eta() > 2 && event[i].eta() < 5) {
-            nEventVetoed[0]++;
-        }
+                if (event[i].eta() > 2 && event[i].eta() < 5) {
+                   nEventVetoed[0]++;
+        
         
 
-            double dist = event[i].vDec().pAbs();        
-            // ratio of numberOfEvents to total number of events between 900 mm and 1000 mm
-            if (dist > 900 && dist < 1000) {
-                nEventVetoed[1]++;
-                nEventAccepted[i]++;
-                decVtx->Fill(dist);
-               //int numberOfEvents = 0;
-               //numberOfEvents = numberOfEvents + 1;
-               //cout << "total number of events between 900 mm and 1000 mm = " << numberOfEvents << endl;
-               }            
+                   //double dist = event[i].vDec().pAbs();  
+                   double dist = sqrt(event[i].xDec() * event[i].xDec() +
+                              event[i].yDec() * event[i].yDec() +
+                              event[i].zDec() * event[i].zDec());            
+                   decVtx->Fill(dist);      
+                   if (dist > 1000 && dist < 2000) {
+                      nEventVetoed[1]++;
+                      nEventAccepted[i]++;
+                    }         
+        }   
         }
         }
 
@@ -126,8 +105,8 @@ int main() {
     
     // Show histogram. Possibility to close it.
     decVtx->Draw();
-    std::cout << "\nDouble click on the histogram window to quit.\n";
-    gPad->WaitPrimitive();
+    //std::cout << "\nDouble click on the histogram window to quit.\n";
+    //gPad->WaitPrimitive();
     // Save histogram on file and close file.
     decVtx->Write();
     delete outFile;
