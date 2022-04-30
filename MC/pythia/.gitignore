@@ -4,6 +4,7 @@
 *.dat
 *.py
 !scripts/*/*.py
+!scripts/*/*/*.py
 *.txt 
 .DS_Store
 *.vscode
@@ -12,4 +13,4 @@
 !.gitignore
 SLHA/CMS/*
 *.pdf
-!scripts/*/*pdf
+!scripts/DecayWindowAnalysis/*/*pdf
