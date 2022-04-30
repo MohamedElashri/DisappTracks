@@ -97,8 +97,6 @@ int main() {
     }    
     // Stats
     pythia.stat();
-    // applying fit to histogram
-    //decVtx->Fit("exp");
 
     cout << endl << nEvent << " events generated. " << nEventAccepted[0]
     << " events passed cuts." << endl;
