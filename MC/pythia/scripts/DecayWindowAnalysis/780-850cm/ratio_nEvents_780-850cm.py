@@ -25,6 +25,8 @@ y4 = [element / 10000 for element in y4]
 plt.plot(x4, y4,marker='x', linestyle='dashdot', color='m', label='10000 cm')
 
 
+# CMS accpetance
+# https://www.hepdata.net/record/ins1790827
 x5 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 y5 = [0.00085014,0.00048598,0.00062577,0.00082845,0.00062054,0.00064325,0.0007397,0.00056225,0.0004338,0.00037027]
 plt.plot(x5, y5,marker='+', linestyle='solid', color='y', label='10 cm (CMS)')
@@ -45,5 +47,5 @@ plt.title('Number of Events between T1 and T2 (780-850 cm) vs Mass')
 plt.xlabel('Mass (GeV)')
 plt.ylabel('Number of Events')
 plt.legend()
-plt.savefig('nEvents_90-100cm.pdf')  
+plt.savefig('nEvents_780-850cm.pdf')  
 plt.show()
