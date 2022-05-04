@@ -65,8 +65,24 @@ int main() {
                 //decVtx->Fill(dist);
                 //cout << "\n Chargino decay vertex (mm from origin)\n"<< dist << endl;
                 }
-           
-            }
+                */
+                if (event[i].eta() > 2 && event[i].eta() < 5) {
+                   nEventVetoed[0]++;
+        
+        
+
+                   //double dist = event[i].vDec().pAbs();  
+                   double dist = sqrt(event[i].xDec() * event[i].xDec() +
+                              event[i].yDec() * event[i].yDec() +
+                              event[i].zDec() * event[i].zDec());            
+                   decVtx->Fill(dist);      
+                   if (dist > 7800 && dist < 8500) {
+                      nEventVetoed[1]++;
+                      nEventAccepted[i]++;
+                    }         
+        }   
+        }
+        }
 
         }
 
