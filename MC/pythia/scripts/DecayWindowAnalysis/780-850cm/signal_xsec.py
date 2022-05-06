@@ -38,7 +38,7 @@ N4 = L * np.multiply(y4,xsec_prod)
 plt.plot(x4, N4,marker='x', linestyle='dashdot', color='y', label='10000 cm')
 
 
-plt.title('Number of Events between T1-T3 vs Mass')
+plt.title('Number of Events between T1-T2 vs Mass')
 plt.xlabel('Mass (GeV)')
 plt.ylabel('Number of Events')
 plt.legend()
