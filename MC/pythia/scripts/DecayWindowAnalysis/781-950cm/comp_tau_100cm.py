@@ -11,9 +11,9 @@ x2 = [100,200,300,400,500,600,700,800,900,1000]
 y2 = [0.00061004,0.0024316,0.0038854,0.0051921,0.0050584,0.00598,0.0071477,0.0074629,0.007491,0.0079149]
 plt.plot(x2, y2,marker='+', linestyle='solid', color='b', label='100 cm (CMS)')
 
-plt.title('Number of Events between T1 and T3 (781-950 cm) (tau = 100cm)  vs Mass')
+plt.title('Ratio of Events between T1 and T3 (781-950 cm) (tau = 100cm)  vs Mass')
 plt.xlabel('Mass (GeV)')
-plt.ylabel('Number of Events')
+plt.ylabel('Ratio of Events')
 plt.legend()
 plt.savefig('comp_tau_100cm.pdf')  
 plt.show()

@@ -12,9 +12,9 @@ y2 = [0.00085014,0.00048598,0.00062577,0.00082845,0.00062054,0.00064325,0.000739
 plt.plot(x2, y2,marker='+', linestyle='solid', color='b', label='10 cm (CMS)')
 
 
-plt.title('Number of Events between T1 and T3 (781-850 cm) (tau = 10cm)  vs Mass')
+plt.title('Ratio of Events between T1 and T3 (781-850 cm) (tau = 10cm)  vs Mass')
 plt.xlabel('Mass (GeV)')
-plt.ylabel('Number of Events')
+plt.ylabel('Ratio of Events')
 plt.legend()
 plt.savefig('comp_tau_10cm.pdf')  
 plt.show()
