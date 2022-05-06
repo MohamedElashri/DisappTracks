@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 ## for 100 cm
 x1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-y1 = [24,13,11,20,16,15,22,24,23,23]
+y1 = [188,160,214,238,198,203,210,205,173,156]
 y1 = [element / 10000 for element in y1]
 plt.plot(x1, y1,marker='x', linestyle='dashdot', color='r', label='10000 cm')
 
