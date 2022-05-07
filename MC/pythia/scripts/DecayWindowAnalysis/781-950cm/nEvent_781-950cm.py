@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 ## for 10 cm 
 x1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-y1 = [16,0,0,0,0,0,0,0,0,00,0,0,0,0,0,0,0]
+y1 = [16,0,0,0,0,0,0,0,0,0]
 plt.plot(x1, y1,marker='x', linestyle='--', color='r', label='10 cm')
 
 ## for 100 cm
@@ -20,7 +20,7 @@ x4 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 y4 = [52,39,32,57,46,47,60,45,51,39]
 plt.plot(x4, y4,marker='o', linestyle='--', color='m', label='10000 cm')
 
-
+#plt.yscale('log')
 plt.title('Number of Events between T1 and T2 (780-850 cm) vs Mass')
 plt.xlabel('Mass (GeV)')
 plt.ylabel('Number of Events')
