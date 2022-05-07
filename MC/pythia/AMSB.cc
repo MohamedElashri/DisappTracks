@@ -23,12 +23,8 @@ int main() {
     pythia.readFile("AMSB.cmnd");
 
     // To use with statistics
-    int nEventAccepted[1] = { 0 };
-    int nEventVetoed[2] = { 0, 0};
-    const char *vetoStr[] = { "|eta|", "dist" };
-
-
-
+    int neta_accepted = 0 ;
+    int ndecay_accepted = 0 ;
 
     // Initialize.
     pythia.init();
@@ -62,20 +58,8 @@ int main() {
             int idAbs = event[i].idAbs();
             double eta = event[i].eta();
             if (idAbs == 1000024) {
-                /*
-                if (eta > 2  && eta < 5 ) {
-                // Separation of chargino decay vertex from the origin
-                // double dist = event[i].vDec().pAbs(); // It give the same result
-                double dist = sqrt(event[i].xDec() * event[i].xDec() +
-                              event[i].yDec() * event[i].yDec() +
-                              event[i].zDec() * event[i].zDec());
-                //decVtx.fill(dist);
-                decVtx->Fill(dist);
-                //cout << "\n Chargino decay vertex (mm from origin)\n"<< dist << endl;
-                }
-                */
                 if (event[i].eta() > 2 && event[i].eta() < 5) {
-                   nEventVetoed[0]++;
+                   neta_accepted++;
         
         
 
@@ -84,9 +68,8 @@ int main() {
                               event[i].yDec() * event[i].yDec() +
                               event[i].zDec() * event[i].zDec());            
                    decVtx->Fill(dist);      
-                   if (dist > 1000 && dist < 2000) {
-                      nEventVetoed[1]++;
-                      nEventAccepted[i]++;
+                   if (dist > 8500 && dist < 9500) {
+                      ndecay_accepted++;
                     }         
         }   
         }
@@ -97,19 +80,20 @@ int main() {
     }    
     // Stats
     pythia.stat();
-    // applying fit to histogram
-    //decVtx->Fit("exp");
 
-    cout << endl << nEvent << " events generated. " << nEventAccepted[0]
-    << " events passed cuts." << endl;
+    cout << endl << nEvent << " events generated. " << neta_accepted
+    << " events passed eta cut." << endl;
+    cout << endl << nEvent << " events generated. " << ndecay_accepted
+    << " events passed decay + eta cuts." << endl;
+
     
     // Show histogram. Possibility to close it.
-    decVtx->Draw();
+    //decVtx->Draw();
     //std::cout << "\nDouble click on the histogram window to quit.\n";
     //gPad->WaitPrimitive();
     // Save histogram on file and close file.
-    decVtx->Write();
-    delete outFile;
+    //decVtx->Write();
+    //delete outFile;
 
     // normalize histograms by 1/nEvent
     //decVtx.normalizeSpectrum(nEvent);
