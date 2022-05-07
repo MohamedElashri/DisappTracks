@@ -7,7 +7,7 @@ xsec_prod = [2.428e-08,1.902e-09,3.969e-10,1.229e-10,4.592e-11,1.984e-11 ,9.366e
 #xsec_prod = [element * 1e-3 for element in xsec_prod]
 plt.plot(x1, xsec_prod,marker='o', linestyle='dashdot', color='b', label='Cross Section')
 
-plt.yscale('log', nonposy='clip')
+plt.yscale('log')
 plt.title('Production Cross Section vs Mass')
 plt.xlabel('Mass (GeV)')
 plt.ylabel('Cross Section (mb)')
