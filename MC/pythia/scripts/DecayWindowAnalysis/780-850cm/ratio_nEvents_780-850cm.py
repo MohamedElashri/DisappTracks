@@ -43,9 +43,9 @@ x8 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 y8 = [1.6176e-05,2.5473e-05,5.5924e-05,0.00012573,0.00017215,0.00024393,0.00018914,0.00021643,0.00038493,0.00038831]
 plt.plot(x8, y8,marker='+', linestyle='solid', color='0', label='10000 cm (CMS)')
 
-plt.title('Number of Events between T1 and T2 (780-850 cm) vs Mass')
+plt.title('LHCb Accpetance between T1 and T2 (780-850 cm) vs Mass')
 plt.xlabel('Mass (GeV)')
-plt.ylabel('Number of Events')
+plt.ylabel('Accpetance')
 plt.legend()
-plt.savefig('nEvents_780-850cm.pdf')  
+plt.savefig('Acc_780-850cm.pdf')  
 plt.show()
