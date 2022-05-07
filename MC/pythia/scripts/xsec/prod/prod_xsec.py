@@ -7,7 +7,7 @@ plt.plot(x1, y1,marker='o', linestyle='dashdot', color='r', label='Production')
 
 
 
-
+plt.yscale('log')
 plt.title('Production cross section vs Mass')
 plt.xlabel('Mass (GeV)')
 plt.ylabel('Production cross section (mb)')

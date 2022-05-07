@@ -60,9 +60,6 @@ int main() {
             if (idAbs == 1000024) {
                 if (event[i].eta() > 2 && event[i].eta() < 5) {
                    neta_accepted++;
-        
-        
-
                    //double dist = event[i].vDec().pAbs();  
                    double dist = sqrt(event[i].xDec() * event[i].xDec() +
                               event[i].yDec() * event[i].yDec() +
