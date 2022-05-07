@@ -35,7 +35,7 @@ y4 = [element / 10000 for element in y4]
 sigma4 =  np.multiply(y4,xsec_prod) 
 plt.plot(x4, sigma4,marker='x', linestyle='dashdot', color='y', label='10000 cm')
 
-plt.yscale('log', nonposy='clip')
+plt.yscale('log')
 plt.title('Signal Cross section between T2-T3 vs Mass')
 plt.xlabel('Mass (GeV)')
 plt.ylabel('Cross Section')
