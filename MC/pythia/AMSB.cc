@@ -31,11 +31,10 @@ int main() {
     //pythia.particleData.listChanged();
 
     // Create file on which histogram(s) can be saved.
-    TFile* outFile = new TFile("hist.root", "RECREATE");
+    //TFile* outFile = new TFile("hist.root", "RECREATE");
     // Book histogram
-    TH1F *decVtx = new TH1F("decVtx","Chargino decay vertex ", 100, 0, 10000);
+    //TH1F *decVtx = new TH1F("decVtx","Chargino decay vertex ", 100, 0, 10000);
     //TH1F *decVtx = new TH1F("decVtx","Chargino decay vertex ", 100, 900, 1000); // for the decay vertex in custom decay window
-    // make exponential fit function
     int CHI = 1000024;
     cout << "Lifetime [mm] =" << scientific << pythia.particleData.tau0(CHI) << endl;
 // Histograms
@@ -64,8 +63,8 @@ int main() {
                    double dist = sqrt(event[i].xDec() * event[i].xDec() +
                               event[i].yDec() * event[i].yDec() +
                               event[i].zDec() * event[i].zDec());            
-                   decVtx->Fill(dist);      
-                   if (dist > 8500 && dist < 9500) {
+                   //decVtx->Fill(dist);      
+                   if (dist > 0 && dist < 10000) {
                       ndecay_accepted++;
                     }         
         }   
