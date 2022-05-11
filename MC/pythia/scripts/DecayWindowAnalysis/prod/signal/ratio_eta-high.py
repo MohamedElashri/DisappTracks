@@ -16,7 +16,7 @@ plt.plot(x1, y1,marker='o', linestyle='dashdot', color='r', label='Number of Eve
 plt.plot(x2, y2,marker='o', linestyle='dashdot', color='b', label='Number of Events (100000 cm)')
 plt.plot(x3, y3,marker='o', linestyle='dashdot', color='g', label='Number of Events (1000000 cm)')
 
-plt.title('Ratio of Events Produced pass through LHCb Acceptance (high Lifetimes) vs Mass')
+plt.title(' LHCb eta Acceptance (high Lifetimes) vs Mass')
 plt.xlabel('Mass (GeV)')
 plt.ylabel('Events Ratio')
 plt.legend()
