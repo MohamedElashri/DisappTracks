@@ -1,20 +1,19 @@
 # PYTHIA configuration file.
-# Generated on Wed Mar 30 11:23:15 EDT 2022 with the user supplied options:
-# --with-python-config=python3-config
-# --with-root=
+# Generated on Tue 17 May 2022 02:40:27 AM UTC with the user supplied options:
+# --with-root=/workspaces/root
 
 # Install directory prefixes.
-PREFIX_BIN=/Users/mohamedelashri/Desktop/LHCb/pythia/bin
-PREFIX_INCLUDE=/Users/mohamedelashri/Desktop/LHCb/pythia/include
-PREFIX_LIB=/Users/mohamedelashri/Desktop/LHCb/pythia/lib
-PREFIX_SHARE=/Users/mohamedelashri/Desktop/LHCb/pythia/share/Pythia8
+PREFIX_BIN=/workspaces/pythia8307/bin
+PREFIX_INCLUDE=/workspaces/pythia8307/include
+PREFIX_LIB=/workspaces/pythia8307/lib
+PREFIX_SHARE=/workspaces/pythia8307/share/Pythia8
 
 # Compilation flags (see ./configure --help for further documentation).
 CXX=g++
 CXX_COMMON=-O2 -std=c++11 -pedantic -W -Wall -Wshadow -fPIC -pthread
-CXX_SHARED=-dynamiclib
-CXX_SONAME=-Wl,-dylib_install_name,@rpath/
-LIB_SUFFIX=.dylib
+CXX_SHARED=-shared
+CXX_SONAME=-Wl,-soname,
+LIB_SUFFIX=.so
 OBJ_COMMON=
 
 EVTGEN_USE=false
@@ -67,9 +66,9 @@ RIVET_LIB=
 
 ROOT_USE=true
 ROOT_CONFIG=root-config
-ROOT_BIN=/opt/homebrew/Cellar/root/6.26.00/bin/
-ROOT_INCLUDE=-I/opt/homebrew/Cellar/root/6.26.00/include/root
-ROOT_LIB=-L/opt/homebrew/Cellar/root/6.26.00/lib/root -Wl,-rpath,/opt/homebrew/Cellar/root/6.26.00/lib/root -lCore
+ROOT_BIN=/workspaces/root/bin/
+ROOT_INCLUDE=-I/workspaces/root/include
+ROOT_LIB=-L/workspaces/root/lib -Wl,-rpath,/workspaces/root/lib -lCore
 
 GZIP_USE=false
 GZIP_CONFIG=
@@ -77,10 +76,10 @@ GZIP_BIN=
 GZIP_INCLUDE=
 GZIP_LIB=
 
-PYTHON_USE=true
-PYTHON_CONFIG=python3-config
+PYTHON_USE=false
+PYTHON_CONFIG=
 PYTHON_BIN=
-PYTHON_INCLUDE=-I/opt/homebrew/Cellar/python@3.8/3.8.13/Frameworks/Python.framework/Versions/3.8/include/python3.8 -I/opt/homebrew/Cellar/python@3.8/3.8.13/Frameworks/Python.framework/Versions/3.8/include/python3.8
+PYTHON_INCLUDE=
 PYTHON_LIB=
 
 MG5MES_USE=false

@@ -22,7 +22,7 @@ Beams:eCM = 13000.                 ! CM energy of collision
 
 ! 4) Read SLHA spectrum 
 SLHA:verbose = 3                    ! Print all SLHA information
-SLHA:file = SLHA/AMSB_Chargino700GeV_isajet88.slha
+SLHA:file = SLHA/MySLHA/AMSB_chargino_100GeV_Isajet788.slha
 SLHA:allowUserOverride =true
 
 ! 5) Process selection
